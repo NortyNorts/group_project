@@ -1,6 +1,18 @@
-const Header = (()=>{
+
+const Header = (({handleLoginClick})=>{
+    
+    const handleClick = () =>{
+        handleLoginClick()
+    }
+    
     return(
-        <h2>I am the Header component</h2>
+        <>
+            <div className="navbar">
+                <div>
+                    <span onClick={handleClick} className='loginicon'>Sign In</span>
+                </div>
+            </div>
+        </>
     )
 })
 
