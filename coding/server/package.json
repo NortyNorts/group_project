@@ -6,11 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server:dev": "nodemon server.js",
-    "seeds": "mongo < ./db/duckSeeds.js",
-    "seedsDucks": "mongo < ./db/duckSeeds1.js"
-    
-
-
+    "usersSeeds": "mongo < ./db/usersSeeds.js",
+    "duckSeeds": "mongo < ./db/duckSeeds.js"
   },
   "keywords": [],
   "author": "",

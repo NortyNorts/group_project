@@ -1,17 +1,28 @@
+import React, {useState} from "react"
 
-const Header = (({handleLoginClick})=>{
+const Header = (({users})=>{
     
-    const handleClick = () =>{
-        handleLoginClick()
+    const [selectedUser, setSelectedUser] = useState(null)
+
+    const handleChange = function(event){
+        const chosenUser = users[event.target.value]
+        onUserSelected(chosenUser)
     }
+
+    const usersList = users.map((user, index) =>{
+        return<option value={index} key={index}>{user.userName}</option>
+    })
     
+    const onUserSelected = function(user){
+        setSelectedUser(user)
+    }
+
     return(
         <>
-            <div className="navbar">
-                <div>
-                    <span onClick={handleClick} className='loginicon'>Sign In</span>
-                </div>
-            </div>
+            <select defaultValue="" onChange={handleChange}>
+                <option value="" selected>Select User</option>
+            {usersList}
+            </select>
         </>
     )
 })
