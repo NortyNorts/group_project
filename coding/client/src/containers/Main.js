@@ -5,23 +5,27 @@ import Links from '../components/Links'
 import Quiz from './Quiz'
 import RubberDucking from './RubberDucking'
 import Stickies from './Stickies'
-import LoginForm from '../components/LoginForm'
 import "../css/main.css"
+import UsersService from '../services/UserService'
 
 
 const Main = (()=>{
 
-    const [isShowLogin, setIsShowLogin] = useState(false)
+    const [users, setUsers] = useState ([])
+    
 
-    const handleLoginClick = () => {
-        setIsShowLogin((isShowLogin) => ! isShowLogin)
-    }
+    useEffect(() => {
+        UsersService.getUsers()
+          .then(users => setUsers(users));
+      }, []);
+
+
 
     return(
         <>
             <div className="Main">
-                <Header handleLoginClick={handleLoginClick}/>
-                <LoginForm isShowLogin={isShowLogin}/>
+                <Header users={users}/>
+                {/* <LoginForm isShowLogin={isShowLogin}/> */}
             </div>
             <Quiz/>
             <Stickies/>
