@@ -2,11 +2,39 @@ import React from "react";
 
 
 
-const QuizItem = ({question, index})=>{
+const QuizItem = ({question, index, onAnswerClick})=>{
 
-    const optionsArray = question.options.map(banana=>{
+    // const handleQuizSubmit = () =>{
+    //     // name of funtion
+    // }
+
+    // const handleAnswerSelect = (e) => {
+    //     console.log("h",e)
+    //    // onAnswerClick(question.option.answer)
+
+    // }
+
+    const  handleChange = e => {
+        //console.log("dddd", e.target.value )
+        onAnswerClick(e.target.value)
+    };
+
+    const optionsArray = question.options.map(option=>{
         return (
-            <li>{banana.answer}</li>
+
+            <>
+
+            
+            {/* <form onSubmit={handleQuizSubmit}> */}
+            <li>
+                <label htmlFor='radio-answer' name={option.answer}></label>
+                <input name={question.question} type='radio' value={option.isCorrect} onChange={handleChange}/>{option.answer}
+                </li>
+
+            
+            
+            {/* </form> */}
+            </>
         )
         
         
@@ -14,6 +42,7 @@ const QuizItem = ({question, index})=>{
 
     return (
         <>
+            
             <h1>{question.question}</h1>
             {optionsArray}
         

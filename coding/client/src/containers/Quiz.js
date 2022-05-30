@@ -64,11 +64,17 @@ const Quiz = (()=>{
     const [score, setScore] = useState(0)
     const [finalScore, setFinalScore] = useState(false)
 
+    const onAnswerClick = (banana) => {
+        if(banana==="true"){
+            setScore(score + 1)
+        }
+    }
+
 
     return (
         <>
             <h2>I am the Quiz container</h2>
-            <QuizList QuestionData={QuestionData}/>
+            <QuizList QuestionData={QuestionData} onAnswerClick={onAnswerClick} score={score}/>
         </>
     )
 
