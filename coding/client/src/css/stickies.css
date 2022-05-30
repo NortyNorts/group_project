@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    padding: 50px;
+    height: 100vh;
+    background-image: url('../assets/pinboard3.jpeg');
+    background-size: cover;   
+}
+    
+.close {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 15px;
+        transition: transform .3s ease;
+        
+    }
+.close:hover {
+    transform: scale(1.6);
+}
+
+.edit {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 30px;
+    transition: transform .3s ease;
+
+}
+.edit:hover {
+    transform: scale(1.6);
+}
+
+.note-form {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    min-height: 200px;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid lightgrey;
+    min-width: 100%;
+    max-width: 100%;
+    height: 180px;
+    min-height: 180px;
+    padding: 10px;
+    outline: none;
+    background-color: #fff27f;
+}
+
+button {
+    width: 100%;
+    background-color: #fff27f;
+    cursor: pointer;
+    padding: 10px; 
+    border: 0;
+    outline: none;
+}
+
+button:hover {
+    background-color: #abdee6;
+    color: white;
+}
+
+.note {
+    position: absolute;
+    cursor: pointer;
+    background-image: url('../assets/post-it-note.png');
+    background-size: cover;
+    top: 100px;
+    left: 300px;
+    height: 200px;
+    width: 200px;
+    padding: 20px;
+    position: absolute;
+    /* box-shadow: 0.5px 0.5px 0.5px 0.5px ; */
+    /* margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    /* above tests for responsiveness */
+}
+
+.text {
+    height: 100%;
+    width: 100%;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+
+}
+::-webkit-scrollbar {
+    color: #fff27f;
+}
+
+::-webkit-scrollbar-thumb {
+    color: #fff27f;
+}

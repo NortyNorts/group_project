@@ -1,13 +1,13 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "server:dev": "nodemon server.js",
-    "usersSeeds": "mongo < ./db/usersSeeds.js"
+    "usersSeeds": "mongo < ./db/usersSeeds.js",
+    "duckSeeds": "mongo < ./db/duckSeeds.js"
   },
   "keywords": [],
   "author": "",
@@ -19,5 +19,6 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.16"
-  }
+  },
+  "description": ""
 }
