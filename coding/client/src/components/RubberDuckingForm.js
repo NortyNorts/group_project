@@ -1,32 +1,43 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-const RubberDuckingForm =() =>{
 
-    const[question, setQuestion] = useState("")
+const RubberDuckingForm =({selectedFact, getRandomDuckFact}) =>{
 
-    const handleQuestionChange = (event) =>{
-        setQuestion(event.target.value)
-    }
+    const[randomDuckFact, setRandomDuckFact] = useState('')
+    const[displayQuestion, setDisplayQuestion] = useState('')
 
-    const resetForm = () => {
-        setQuestion('')
 
-    }
 
-    const handleFormSubmit = (event) => {
-        event.preventDefault()
-        
-        resetForm()
+    
+    const saveSubmit = (event) =>{
+            event.preventDefault()
+            // setQuestion(event.target.value)
+            setDisplayQuestion(event.target.question.value)
+            getRandomDuckFact()
+
+            setRandomDuckFact(selectedFact)
+
     }
 
 
     return (
-        <form onSubmit={handleFormSubmit}>
-        
-        <input type="text" name="question" value={question} onChange={handleQuestionChange} />
-    
-        <input type="submit" value="Save" />
-        </form>
+        <>
+        <form onSubmit={saveSubmit}>
+        <label htmlFor="question">Ask Eric:</label>
+        <input id="question" type="text" />
+        <input type="submit"  />
+      </form>
+
+        <div>
+            <h2>
+                you asked: 
+                <span> {displayQuestion}</span>
+                <p></p>
+                Eric says:
+                <span> {randomDuckFact}</span>
+            </h2>
+        </div>
+        </>
     )
 }
 
