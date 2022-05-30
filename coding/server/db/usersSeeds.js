@@ -1,5 +1,4 @@
 use group_project;
-db.dropDatabase();
 
 db.users.insertMany([
   {

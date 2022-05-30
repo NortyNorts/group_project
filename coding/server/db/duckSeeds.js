@@ -1,7 +1,7 @@
 use group_project;
 db.dropDatabase();
 
-db.erik.insertMany([
+db.ducks.insertMany([
     {
         DuckFact: "Females Mallards build nests in the ground and lay from 8 to 13 greenish-grayish eggs. Incubation period lasts 23 to 30 days.",
     },

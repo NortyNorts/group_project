@@ -11,7 +11,7 @@ function DuckResponse(){
       }, [])
 
     const getFacts = function(){
-    fetch('http://localhost:9000/api/erik')
+    fetch('http://localhost:9000/api/ducks')
     .then(res => res.json())
     .then(duckFacts => setDuckFacts(duckFacts));
     }
