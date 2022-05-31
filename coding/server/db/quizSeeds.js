@@ -2,30 +2,36 @@ use group_project;
 
 db.quiz.insertMany([
 
-    {question:'Which of the following are true of Python dictionaries:', 
+    {
+        question:'Which of the following are true of Python dictionaries:', 
         options:[
-        {id:1,answer: 'Dictionaries are accessed by key.', isCorrect: true},
-        {id:2,answer: 'A dictionary can contain any object type except another dictionary.', isCorrect: false},
-        {id:3,answer: 'All the keys in a dictionary must be of the same type', isCorrect: false},
-        {id:4,answer: 'Items are accessed by their position in a dictionary', isCorrect: false}
-                ]
+        {id:1,answer: 'Dictionaries are accessed by key.'},
+        {id:2,answer: 'A dictionary can contain any object type except another dictionary.'},
+        {id:3,answer: 'All the keys in a dictionary must be of the same type'},
+        {id:4,answer: 'Items are accessed by their position in a dictionary'}
+                ],
+        correctAnswer:1
     },
 
-    {question:'What is a question?', 
+    {
+        question:'What is a question?', 
         options:[
-        {id:1,answer: 'blue', isCorrect: false},
-        {id:2,answer: 'orange', isCorrect: true},
-        {id:3,answer: 'red', isCorrect: false},
-        {id:4,answer: 'green', isCorrect: false}
-                ]
+        {id:1,answer: 'blue'},
+        {id:2,answer: 'orange'},
+        {id:3,answer: 'red'},
+        {id:4,answer: 'green'}
+                ],
+        correctAnswer:2
     },
 
-    {question:'What is life?', 
+    {
+        question:'What is life?', 
         options:[
-        {id:1,answer: 'apple', isCorrect: false},
-        {id:2,answer: 'banana', isCorrect: false},
-        {id:3,answer: 'pear', isCorrect: true},
-        {id:4,answer: 'kiwi', isCorrect: false}
-                ]
+        {id:1,answer: 'apple'},
+        {id:2,answer: 'banana'},
+        {id:3,answer: 'pear'},
+        {id:4,answer: 'kiwi'}
+                ],
+        correctAnswer:3
     }
 ] );

@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-const QuizItem = ({question, index, onAnswerClick})=>{
+const QuizItem = ({question, index, onQuizSubmit, questionIndex, onAnswerChange})=>{
 
     // const handleQuizSubmit = () =>{
     //     // name of funtion
@@ -14,12 +14,14 @@ const QuizItem = ({question, index, onAnswerClick})=>{
 
     // }
 
-    const  handleChange = e => {
-        //console.log("dddd", e.target.value )
-        onAnswerClick(e.target.value)
-    };
+    // const  handleChange = e => {
+    //     //console.log("dddd", e.target.value )
+    //     onAnswerClick(e.target.value)
+    // };
 
-    const optionsArray = question.options.map(option=>{
+
+
+    const optionsArray = question.options.map((option)=>{
         return (
 
             <>
@@ -28,11 +30,11 @@ const QuizItem = ({question, index, onAnswerClick})=>{
             {/* <form onSubmit={handleQuizSubmit}> */}
             <li>
                 <label htmlFor='radio-answer' name={option.answer}></label>
-                <input name={question.question} type='radio' value={option.isCorrect} onChange={handleChange}/>{option.answer}
-                </li>
+                <input onChange={()=>onAnswerChange(option.id, questionIndex)} name={question.question} type='radio'/>{option.answer}
+            </li>
 
             
-            
+            {/* onChange={handleChange} */}
             {/* </form> */}
             </>
         )
@@ -45,7 +47,7 @@ const QuizItem = ({question, index, onAnswerClick})=>{
             
             <h1>{question.question}</h1>
             {optionsArray}
-        
+
         </>
     )
 }
