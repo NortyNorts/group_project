@@ -7,16 +7,20 @@ import RubberDucking from './RubberDucking'
 import Stickies from './Stickies'
 import "../css/main.css"
 import UsersService from '../services/UserService'
+import QuizService from '../services/QuizService'
 
 
 const Main = (()=>{
 
     const [users, setUsers] = useState ([])
+    const [quiz, setQuiz] = useState ([])
     
 
     useEffect(() => {
         UsersService.getUsers()
-          .then(users => setUsers(users));
+            .then(users => setUsers(users));
+        QuizService.getQuiz()
+            .then(quiz => setQuiz(quiz))
       }, []);
 
 
@@ -62,7 +66,7 @@ const Main = (()=>{
                 <Header users={users}/>
                 {/* <LoginForm isShowLogin={isShowLogin}/> */}
             </div>
-            <Quiz/>
+            <Quiz quiz={quiz}/>
             <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
             <Anecdotes/>
             <Links/>
