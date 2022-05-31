@@ -17,6 +17,9 @@ MongoClient.connect('mongodb://127.0.0.1:27017', { useUnifiedTopology: true })
     const ducksCollection = db.collection('ducks');
     const ducksRouter = createRouter(ducksCollection);
     app.use('/api/ducks', ducksRouter);
+    const quizCollection = db.collection('quiz');
+    const quizRouter = createRouter(quizCollection);
+    app.use('/api/quiz', quizRouter);
   })
   .catch(console.err);
 
