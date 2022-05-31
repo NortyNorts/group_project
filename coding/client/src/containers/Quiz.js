@@ -37,16 +37,40 @@ const Quiz = (({quiz})=>{
 
  
     const [score, setScore] = useState(0)
-    const [finalScore, setFinalScore] = useState(false)
+    const [finalScore, setFinalScore] = useState(0)
     const [userAnswers, setUserAnswers] = useState([0,0,0])
+
+    const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
+    const [userWrongAnswers, setUserWrongAnswer] = useState([])
     
+
 
     const onQuizSubmit = (event)=>{
         event.preventDefault()
         // const targetArray = event.target.map(banana => banana.form);
+        correctAnswersArray.forEach((actualAnswer, index)=>{
+            const userAnswer = userAnswers[index]
+                if(actualAnswer === userAnswer){
+                    const copy=[...userCorrectAnswers, userAnswer]
+                    setUserCorrectAnswers(copy)
+                }
+                else{
+                    const copy2=[...userWrongAnswers, userAnswer]
+                    setUserWrongAnswer(copy2)
+                }
+        })
 
-        console.log(event)
-        console.log(correctAnswersArray)
+        const checkFinalScore = ()=>{
+            setFinalScore(userCorrectAnswers.length)
+        }
+
+        checkFinalScore()
+        console.log(userCorrectAnswers)
+        console.log(userWrongAnswers)
+        console.log(finalScore)
+        
+        
+
         // console.log(targetArray)
 
 
