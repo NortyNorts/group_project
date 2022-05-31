@@ -16,7 +16,7 @@ const Main = (()=>{
     const [quiz, setQuiz] = useState ([])
     const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
     const [userWrongAnswers, setUserWrongAnswer] = useState([])
-    const [finalScore, setFinalScore] = useState(0)
+    const [finalScore, setFinalScore] = useState(null)
     
 
     useEffect(() => {
@@ -68,7 +68,7 @@ const Main = (()=>{
                 <Header users={users}/>
                 {/* <LoginForm isShowLogin={isShowLogin}/> */}
             </div>
-            <Quiz setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
+            <Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
             <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
             <Anecdotes/>
             <Links/>

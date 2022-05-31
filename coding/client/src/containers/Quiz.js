@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import QuizList from "../components/QuizList"
+import ScoreComponent from "../components/ScoreComponent";
 
 
 //A static quiz. We will have 10 questions
@@ -25,13 +26,15 @@ import QuizList from "../components/QuizList"
 
 
 
-const Quiz = (({quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswers, userCorrectAnswers, setFinalScore})=>{
+const Quiz = (({finalScore, quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswers, userCorrectAnswers, setFinalScore})=>{
 
  //data array
 
  const QuestionData = quiz;
 
  const correctAnswersArray = quiz.map(answers => answers.correctAnswer);
+
+ const finalScorePercent = (userCorrectAnswers.length/correctAnswersArray.length)*100
 
     const [userAnswers, setUserAnswers] = useState([])
     
@@ -57,14 +60,14 @@ const Quiz = (({quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswer
 
         setFinalScore(userCorrectAnswersNext.length)
         
-        console.log(userCorrectAnswers)
-        console.log(userWrongAnswers)
     }
 
     return (
         <>
             <h2>I am the Quiz container</h2>
-            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}/>
+            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}
+            />
+            {finalScore ? <ScoreComponent finalScorePercent={finalScorePercent} finalScore={finalScore}/> : null }
         </>
     )
 
