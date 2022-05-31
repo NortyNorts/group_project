@@ -8,11 +8,6 @@ import { v4 as uuid } from 'uuid';
 const Stickies = ({initialNotesState, notesReducer}) => {
     const [notesState, dispatch] = useReducer(notesReducer, initialNotesState);
     const [noteInput, setNoteInput] = useState('');
-    // const [isNoteEdit, setIsNoteEdit] = useToggle()
-
-    // const useToggle = (initialState = false) => {
-    //   // Initialize the state
-    //   const [state, setState] = useState(initialState);
 
     const addNote = event => {
         event.preventDefault();
