@@ -25,7 +25,7 @@ import QuizList from "../components/QuizList"
 
 
 
-const Quiz = (({quiz})=>{
+const Quiz = (({quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswers, userCorrectAnswers, setFinalScore})=>{
 
  //data array
 
@@ -33,76 +33,38 @@ const Quiz = (({quiz})=>{
 
  const correctAnswersArray = quiz.map(answers => answers.correctAnswer);
 
- 
-
- 
-    const [score, setScore] = useState(0)
-    const [finalScore, setFinalScore] = useState(0)
-    const [userAnswers, setUserAnswers] = useState([0,0,0])
-
-    const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
-    const [userWrongAnswers, setUserWrongAnswer] = useState([])
+    const [userAnswers, setUserAnswers] = useState([])
     
-
-
     const onQuizSubmit = (event)=>{
         event.preventDefault()
-        // const targetArray = event.target.map(banana => banana.form);
+        setUserCorrectAnswers([])
+        setUserWrongAnswer([])
+        
+        const userCorrectAnswersNext = []
+        const userWrongAnswersNext = []
+        
         correctAnswersArray.forEach((actualAnswer, index)=>{
             const userAnswer = userAnswers[index]
-                if(actualAnswer === userAnswer){
-                    const copy=[...userCorrectAnswers, userAnswer]
-                    setUserCorrectAnswers(copy)
-                }
-                else{
-                    const copy2=[...userWrongAnswers, userAnswer]
-                    setUserWrongAnswer(copy2)
-                }
+            if(actualAnswer === userAnswer){
+                userCorrectAnswersNext.push(userAnswer)
+            } else {
+                userWrongAnswersNext.push(userAnswer)
+            }
+            
         })
+        setUserCorrectAnswers(userCorrectAnswersNext)
+        setUserWrongAnswer(userWrongAnswersNext)
 
-        const checkFinalScore = ()=>{
-            setFinalScore(userCorrectAnswers.length)
-        }
-
-        checkFinalScore()
+        setFinalScore(userCorrectAnswersNext.length)
+        
         console.log(userCorrectAnswers)
         console.log(userWrongAnswers)
-        console.log(finalScore)
-        
-        
-
-        // console.log(targetArray)
-
-
-        
-
-        //we have an array with the correct answers, index numbers all start at  0. question 1 will be index 0
-        // if index of both arrays are ==== the answer is correct return 'true'
-        //on submit an if their array matches our array 
-        // loop through the answer list 
-        //submitted answer
-        // score array
-        // forloop forEach element in the answer list compare that in the question list 
-        //comparing 2 arrays
-        // required on question 
-        
-    
-
-
-
     }
-
-    // const onAnswerClick = (banana) => {
-    //     if(banana==="true"){
-    //         setScore(score + 1)
-    //     }
-    // }
-
 
     return (
         <>
             <h2>I am the Quiz container</h2>
-            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} score={score} onQuizSubmit={onQuizSubmit}/>
+            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}/>
         </>
     )
 

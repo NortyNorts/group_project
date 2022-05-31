@@ -14,6 +14,9 @@ const Main = (()=>{
 
     const [users, setUsers] = useState ([])
     const [quiz, setQuiz] = useState ([])
+    const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
+    const [userWrongAnswers, setUserWrongAnswer] = useState([])
+    const [finalScore, setFinalScore] = useState(0)
     
 
     useEffect(() => {
@@ -33,7 +36,6 @@ const Main = (()=>{
             // {id: '3', text: "I'm the thrid note", rotate: 8}
         ],
     };
-    // sets notes array to contain a few starting notes. we can add terminal commands, shortcuts and any other info here. Eventually this will be a useEffect hook that fetches data from mongodb on page load
 
 
     const notesReducer = (prevState, action) => {
@@ -66,7 +68,7 @@ const Main = (()=>{
                 <Header users={users}/>
                 {/* <LoginForm isShowLogin={isShowLogin}/> */}
             </div>
-            <Quiz quiz={quiz}/>
+            <Quiz setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
             <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
             <Anecdotes/>
             <Links/>
