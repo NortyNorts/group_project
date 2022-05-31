@@ -7,11 +7,14 @@ db.users.insertMany([
   },
   {
     userName: "Elin",
+    notes: []
   },
   {
     userName: "Cam",
+    notes: []
   },
   {
     userName: "Andy",
+    notes: []
   }
 ]);

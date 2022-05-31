@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import QuizList from "../components/QuizList"
+import ScoreComponent from "../components/ScoreComponent";
 
 
 //A static quiz. We will have 10 questions
@@ -25,7 +26,7 @@ import QuizList from "../components/QuizList"
 
 
 
-const Quiz = (({quiz})=>{
+const Quiz = (({finalScore, quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswers, userCorrectAnswers, setFinalScore})=>{
 
  //data array
 
@@ -33,52 +34,40 @@ const Quiz = (({quiz})=>{
 
  const correctAnswersArray = quiz.map(answers => answers.correctAnswer);
 
- 
+ const finalScorePercent = (userCorrectAnswers.length/correctAnswersArray.length)*100
 
- 
-    const [score, setScore] = useState(0)
-    const [finalScore, setFinalScore] = useState(false)
-    const [userAnswers, setUserAnswers] = useState([0,0,0])
+    const [userAnswers, setUserAnswers] = useState([])
     
-
     const onQuizSubmit = (event)=>{
         event.preventDefault()
-        // const targetArray = event.target.map(banana => banana.form);
-
-        console.log(event)
-        console.log(correctAnswersArray)
-        // console.log(targetArray)
-
-
+        setUserCorrectAnswers([])
+        setUserWrongAnswer([])
         
-
-        //we have an array with the correct answers, index numbers all start at  0. question 1 will be index 0
-        // if index of both arrays are ==== the answer is correct return 'true'
-        //on submit an if their array matches our array 
-        // loop through the answer list 
-        //submitted answer
-        // score array
-        // forloop forEach element in the answer list compare that in the question list 
-        //comparing 2 arrays
-        // required on question 
+        const userCorrectAnswersNext = []
+        const userWrongAnswersNext = []
         
-    
+        correctAnswersArray.forEach((actualAnswer, index)=>{
+            const userAnswer = userAnswers[index]
+            if(actualAnswer === userAnswer){
+                userCorrectAnswersNext.push(userAnswer)
+            } else {
+                userWrongAnswersNext.push(userAnswer)
+            }
+            
+        })
+        setUserCorrectAnswers(userCorrectAnswersNext)
+        setUserWrongAnswer(userWrongAnswersNext)
 
-
-
+        setFinalScore(userCorrectAnswersNext.length)
+        
     }
-
-    // const onAnswerClick = (banana) => {
-    //     if(banana==="true"){
-    //         setScore(score + 1)
-    //     }
-    // }
-
 
     return (
         <>
             <h2>I am the Quiz container</h2>
-            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} score={score} onQuizSubmit={onQuizSubmit}/>
+            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}
+            />
+            {finalScore ? <ScoreComponent finalScorePercent={finalScorePercent} finalScore={finalScore}/> : null }
         </>
     )
 
