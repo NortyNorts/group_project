@@ -1,7 +1,18 @@
+import person5 from "../images/person5.png"
+import '../css/usefullinks.css'
+
+
 const Links = (()=>{
     return(
         <>
-            <h1>Useful Links</h1>
+            
+            
+           
+
+            <div className="useful-links-container">
+            
+            <img src={person5} id="person"/>
+            <div className="useful-links-div">
             <h2>Planning</h2>
             <a href="https://app.diagrams.net/">App.Diagrams Creator</a>
             <br/>
@@ -34,6 +45,9 @@ const Links = (()=>{
             <a href="https://mastery.games/flexboxzombies/">CSS Flexbox Zombies</a>
             <br/>
             <a href="https://www.codingame.com/">Coding Games</a>
+            </div>
+            </div>
+            
         </>
     )
 })

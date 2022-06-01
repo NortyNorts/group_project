@@ -7,10 +7,10 @@ import '../css/duck.css'
 const RubberDucking = (()=>{
     return(
         <>
-            <div className="duck_page">
+            <div className="duck-page">
            
             <DuckResponse/>
- </div>
+            </div>
         </>
     )
 })

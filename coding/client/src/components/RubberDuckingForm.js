@@ -26,8 +26,8 @@ const RubberDuckingForm =({selectedFact, getRandomDuckFact}) =>{
         <>
         <form onSubmit={saveSubmit} id="duck-form">
         <label htmlFor="question">Ask Eric:</label>
-        <input id="question" type="text" />
-        {/* <textarea name="note" id="question" cols="67" rows="12"></textarea> */}
+        {/* <input id="question" type="text" /> */}
+        <textarea name="note" id="question" cols="50" rows="12" className="duck-text-box"></textarea>
         <input type="submit" id="duck-submit" />
       </form>
       

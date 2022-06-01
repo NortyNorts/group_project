@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import '../css/user.css'
 
 const Header = (({users})=>{
     
@@ -19,7 +20,7 @@ const Header = (({users})=>{
 
     return(
         <>
-            <select defaultValue="" onChange={handleChange}>
+            <select defaultValue="" onChange={handleChange} className="drop-down" >
                 <option value="" selected>Select User</option>
             {usersList}
             </select>
