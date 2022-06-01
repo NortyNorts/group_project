@@ -1,15 +1,16 @@
 import RubberDuckingForm from "../components/RubberDuckingForm"
 import DuckResponse from "../components/RubberDuckResponse"
+import '../css/duck.css'
 
 
 
 const RubberDucking = (()=>{
     return(
         <>
-            <h2>I am the Rubber Ducking container</h2>
-
+            <div className="duck_page">
+           
             <DuckResponse/>
- 
+ </div>
         </>
     )
 })

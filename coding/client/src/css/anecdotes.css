@@ -1,0 +1,23 @@
+.anecdotes-container{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    width:100%vh;
+    height: 95vh;
+    background-color: #E3BA71;
+    color:#121212;
+    font-family: 'Mulish', sans-serif;
+    /* font-size: 5em; */
+  }
+
+
+
+
+#bust{
+
+    width: 10em;
+    height: 17em;
+    
+}
