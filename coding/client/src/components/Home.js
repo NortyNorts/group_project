@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom"
 import '../css/home.css'
-import person1 from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/person1.png"
-import person2 from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/person2.png"
-import person3 from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/person3.png"
-import person4 from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/person4.png"
-import duck from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/duck.png"
+import person1 from "../images/person1.png"
+import person2 from "../images/person2.png"
+import person3 from "../images/person3.png"
+import person4 from "../images/person4.png"
+import duck from "../images/duck.png"
 
 
 
