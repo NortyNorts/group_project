@@ -26,48 +26,49 @@ import ScoreComponent from "../components/ScoreComponent";
 
 
 
-const Quiz = (({finalScore, quiz, setUserWrongAnswer, userWrongAnswers, setUserCorrectAnswers, userCorrectAnswers, setFinalScore})=>{
+const Quiz = (({finalScore, quiz, setUserCorrectAnswers, userCorrectAnswers, userWrongAnswers, setUserWrongAnswers, setFinalScore}) => {
 
- //data array
+    const QuestionData = quiz;
 
- const QuestionData = quiz;
+    const correctAnswersArray = quiz.map(answers => answers.correctAnswer);
 
- const correctAnswersArray = quiz.map(answers => answers.correctAnswer);
+    const finalScorePercent = (userCorrectAnswers.length/correctAnswersArray.length)*100
 
- const finalScorePercent = (userCorrectAnswers.length/correctAnswersArray.length)*100
-
-    const [userAnswers, setUserAnswers] = useState([])
-    
-    const onQuizSubmit = (event)=>{
-        event.preventDefault()
-        setUserCorrectAnswers([])
-        setUserWrongAnswer([])
+        const [userAnswers, setUserAnswers] = useState([])
         
-        const userCorrectAnswersNext = []
-        const userWrongAnswersNext = []
-        
-        correctAnswersArray.forEach((actualAnswer, index)=>{
-            const userAnswer = userAnswers[index]
-            if(actualAnswer === userAnswer){
-                userCorrectAnswersNext.push(userAnswer)
-            } else {
-                userWrongAnswersNext.push(userAnswer)
-            }
+        const onQuizSubmit = (event)=>{
+            event.preventDefault()
+            setUserCorrectAnswers([])
+            setUserWrongAnswers([])
             
-        })
-        setUserCorrectAnswers(userCorrectAnswersNext)
-        setUserWrongAnswer(userWrongAnswersNext)
+            const userCorrectAnswersNext = []
+            const userWrongAnswersNext = []
+            
+            correctAnswersArray.forEach((actualAnswer, index)=>{
+                const userAnswer = userAnswers[index]
+                if(actualAnswer === userAnswer){
+                    userCorrectAnswersNext.push(userAnswer)
+                } else {
+                    userWrongAnswersNext.push(index)
+                }    
+            })
 
-        setFinalScore(userCorrectAnswersNext.length)
-        
-    }
+            setUserCorrectAnswers(userCorrectAnswersNext)
+            setUserWrongAnswers(userWrongAnswersNext)
+
+            console.log(userWrongAnswersNext)
+
+            setFinalScore(userCorrectAnswersNext.length)
+
+
+            
+        }
 
     return (
         <>
-            <h2>I am the Quiz container</h2>
             <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}
             />
-            {finalScore ? <ScoreComponent finalScorePercent={finalScorePercent} finalScore={finalScore}/> : null }
+            {finalScore ? <ScoreComponent finalScorePercent={finalScorePercent} finalScore={finalScore} userWrongAnswers={userWrongAnswers}/> : null }
         </>
     )
 
