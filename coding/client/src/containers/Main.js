@@ -66,7 +66,7 @@ const Main = (()=>{
         <>
             <div className="Main">
                 <Header users={users}/>
-                {/* <LoginForm isShowLogin={isShowLogin}/> */}
+ 
             </div>
             <Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
             <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
