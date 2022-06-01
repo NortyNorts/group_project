@@ -36,7 +36,7 @@ const Home = (()=>{
         
           
         <div className="person-text-selection">
-          <Link to='/anecdotes'><h5>Anecdotes</h5></Link>
+          <Link to='/anecdotes'><h5>overReacting?</h5></Link>
           <Link to='/quiz'><h5>Quiz</h5></Link>
           <Link to='/stickies'><h5>Pin Board</h5></Link>
           <Link to='/links'><h5>Useful Links</h5></Link>
@@ -52,7 +52,7 @@ const Home = (()=>{
 
         </div>
 
-        <h3>Remember...</h3>
+        <h3><em>Remember...</em></h3>
         <div className="fourBs">
           <p>Brain</p>
           <p>Books</p>
@@ -64,10 +64,10 @@ const Home = (()=>{
           
         <footer>
 
-        <p>@elin</p>
-        <p>@cam</p>
-        <p>@adam</p>
-        <p>@andrew</p>
+        <p>@ElinVS</p>
+        <p>@Johnstoncam</p>
+        <p>@NortyNorts</p>
+        <p>@Andrew-C-Smith</p>
         </footer>
 
 

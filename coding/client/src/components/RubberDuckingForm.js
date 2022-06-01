@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import '../css/duck.css'
-import duck from "/Users/andrewsmith/CodeClan_work/project_work/group_project/group_project/coding/client/src/images/duck.png"
+import duck from "../images/duck.png"
 
 
 

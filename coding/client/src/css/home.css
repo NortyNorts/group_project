@@ -51,12 +51,10 @@ height: 100vh;
   }
 
 .person-text-selection{
-
     justify-content: space-evenly;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    /* justify-content: space-around; */
 }
 
 #people{
@@ -111,12 +109,18 @@ a:hover {
     height: 100vh;
     background-color: #ffffff;
     }
+.fourBs > p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2em;
+
+}
 
 h3{
     text-align: center;
     color:#e8e5e5;
     font-family: 'Mulish', sans-serif;
     font-size: 2em;
+    margin-bottom: -2em;
 }
 
 footer{
