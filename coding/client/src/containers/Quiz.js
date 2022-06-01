@@ -28,7 +28,9 @@ const Quiz = (({finalScore, quiz, setUserCorrectAnswers, userCorrectAnswers, use
                 if(actualAnswer === userAnswer){
                     userCorrectAnswersNext.push(userAnswer)
                 } else {
+
                     userWrongAnswersNext.push((index+1) + " " + " ...try taking a look at: " + feedbackLinks[index])
+
                 }    
             })
 

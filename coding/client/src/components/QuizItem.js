@@ -23,9 +23,10 @@ const QuizItem = ({question, index, onQuizSubmit, questionIndex, onAnswerChange}
     return (
         <>
             
-            <h1>{question.question}</h1>
+           <div className="questions"> <h5>{question.question} </h5>
             {optionsArray}
-
+            <hr></hr>
+            </div>
         </>
     )
 }

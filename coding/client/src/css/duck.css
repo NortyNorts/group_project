@@ -1,0 +1,49 @@
+.duck_page{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width:100%vh;
+    height: 100vh;
+    background-color: #9acee9;
+    }
+
+#ducking:hover{
+    transform: rotate(10deg)
+
+}
+
+.duck-text {
+    color:#5a5a59;
+    font-family: 'Mulish', sans-serif;
+    font-size: 2em;
+
+}
+#duck-form, #duck-submit{
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #121212;
+    box-shadow: #000 4px 4px 0 0;
+    box-sizing: border-box;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-family: 'Mulish', sans-serif;
+    cursor:pointer;
+    margin:1em;
+}
+
+
+ .duck-submit:active {
+  box-shadow: #000 2px 2px 0 0;
+  transform: translateY(4px);
+ }
+
+ .duck-facts{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: left
+
+ }
+
+

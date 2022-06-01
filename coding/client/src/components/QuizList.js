@@ -1,5 +1,7 @@
 import React from "react"
 import QuizItem from "./QuizItem"
+import '../css/quiz.css'
+
 
 
 const QuizList = (({QuestionData, score, onQuizSubmit, setUserAnswers, userAnswers})=>{
@@ -19,7 +21,7 @@ const QuizArray = QuestionData.map((question, index)=>{
     return (
         <>  
             <form onSubmit={onQuizSubmit}>
-                <p>{QuizArray}</p>
+                <div className="quiz-array"><p>{QuizArray}</p></div>
                     <input type="submit" name="quiz-submit" id="quiz" value="Submit"/>
             </form>
         </>
