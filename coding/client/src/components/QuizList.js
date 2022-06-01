@@ -18,8 +18,7 @@ const QuizArray = QuestionData.map((question, index)=>{
 
     return (
         <>  
-            <h1>score:{score}</h1>
-                <form onSubmit={onQuizSubmit}>
+            <form onSubmit={onQuizSubmit}>
                 <p>{QuizArray}</p>
                     <input type="submit" name="quiz-submit" id="quiz" value="Submit"/>
             </form>

@@ -16,7 +16,7 @@ function App() {
   const [users, setUsers] = useState ([])
   const [quiz, setQuiz] = useState ([])
   const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
-  const [userWrongAnswers, setUserWrongAnswer] = useState([])
+  const [userWrongAnswers, setUserWrongAnswers] = useState([])
   const [finalScore, setFinalScore] = useState(null)
   
 
@@ -72,7 +72,7 @@ function App() {
           <Switch>
             <Route exact path="/"> <Home /></Route>
             
-            <Route exact path="/quiz"><Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz} /></Route>
+            <Route exact path="/quiz"><Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswers={setUserWrongAnswers} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz} /></Route>
             
             <Route path="/stickies"><Stickies initialNotesState={initialNotesState} notesReducer={notesReducer} /></Route>
             

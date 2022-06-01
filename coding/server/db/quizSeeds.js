@@ -3,14 +3,15 @@ use group_project;
 db.quiz.insertMany([
 
     {
-        question:'Which of the following are true of Python dictionaries:', 
+        question:'Which of the following is true of Python dictionaries:', 
         options:[
         {id:1,answer: 'Dictionaries are accessed by key.'},
         {id:2,answer: 'A dictionary can contain any object type except another dictionary.'},
         {id:3,answer: 'All the keys in a dictionary must be of the same type'},
         {id:4,answer: 'Items are accessed by their position in a dictionary'}
                 ],
-        correctAnswer:1
+        correctAnswer:1,
+        link: 'www.1.com'
     },
 
     {
@@ -21,7 +22,8 @@ db.quiz.insertMany([
         {id:3,answer: 'UPPER CASE'},
         {id:4,answer: 'None of the mentioned'}
                 ],
-        correctAnswer:4
+        correctAnswer:4,
+        link: 'www.2.com'
     },
 
     {
@@ -32,7 +34,8 @@ db.quiz.insertMany([
         {id:3,answer: 'Brackets'},
         {id:4,answer: 'All of the mentioned'}
                 ],
-        correctAnswer:1
+        correctAnswer:1,
+        link: 'www.3.com'
     },
 
     {
@@ -43,7 +46,8 @@ db.quiz.insertMany([
         {id:3,answer: 'py'},
         {id:4,answer: 'p'}
                 ],
-        correctAnswer:3
+        correctAnswer:3,
+        link: 'www.4.com'
     },
 
     {
@@ -54,7 +58,8 @@ db.quiz.insertMany([
         {id:3,answer: 'Abc. Def'},
         {id:4,answer: 'ABC. DEF'}
                 ],
-        correctAnswer:1
+        correctAnswer:1,
+        link: 'www.5.com'
     },
 
     {
@@ -65,7 +70,8 @@ db.quiz.insertMany([
         {id:3,answer: 'A dictionary can contain any object type except another dictionary.'},
         {id:4,answer: 'Dictionaries are accessed by key.'}
                 ],
-        correctAnswer:4
+        correctAnswer:4,
+        link: 'www.6.com'
     },
 
     {
@@ -76,7 +82,8 @@ db.quiz.insertMany([
         {id:3,answer: 'function myFunction()'},
         {id:4,answer: 'def myFunction'}
                 ],
-        correctAnswer:1
+        correctAnswer:1,
+        link: 'www.7.com'
     },
 
     {
@@ -87,7 +94,8 @@ db.quiz.insertMany([
         {id:3,answer: 'toUpperCase()'},
         {id:4,answer: 'uppercase()'}
                 ],
-        correctAnswer:1
+        correctAnswer:1,
+        link: 'www.8.com'
     },
 
     {
@@ -98,7 +106,8 @@ db.quiz.insertMany([
         {id:3,answer: '<>'},
         {id:4,answer: '><'}
                 ],
-        correctAnswer:2
+        correctAnswer:2,
+        link: 'www.9.com'
     },
 
     {
@@ -109,7 +118,8 @@ db.quiz.insertMany([
         {id:3,answer: '["apple", "banana", "cherry"]'},
         {id:4,answer: '{"name": "apple", "color": "green"}'}
                 ],
-        correctAnswer:3
+        correctAnswer:3,
+        link: 'www.10.com'
     }
 
 ] );
