@@ -11,7 +11,7 @@ db.quiz.insertMany([
         {id:4,answer: 'Items are accessed by their position in a dictionary'}
                 ],
         correctAnswer:1,
-        link: 'www.1.com'
+        link: 'https://www.w3schools.com/python/python_dictionaries.asp'
     },
 
     {
@@ -23,7 +23,7 @@ db.quiz.insertMany([
         {id:4,answer: 'None of the mentioned'}
                 ],
         correctAnswer:4,
-        link: 'www.2.com'
+        link: 'https://www.w3schools.com/python/python_ref_keywords.asp'
     },
 
     {
@@ -35,7 +35,7 @@ db.quiz.insertMany([
         {id:4,answer: 'All of the mentioned'}
                 ],
         correctAnswer:1,
-        link: 'www.3.com'
+        link: 'https://www.w3schools.com/python/gloss_python_indentation.asp'
     },
 
     {
@@ -47,7 +47,7 @@ db.quiz.insertMany([
         {id:4,answer: 'p'}
                 ],
         correctAnswer:3,
-        link: 'www.4.com'
+        link: 'https://fileinfo.com/extension/py#:~:text=A%20PY%20file%20is%20a,and%20other%20administrative%20computer%20systems.'
     },
 
     {
@@ -59,7 +59,7 @@ db.quiz.insertMany([
         {id:4,answer: 'ABC. DEF'}
                 ],
         correctAnswer:1,
-        link: 'www.5.com'
+        link: 'https://www.w3schools.com/python/ref_string_capitalize.asp'
     },
 
     {
@@ -71,7 +71,7 @@ db.quiz.insertMany([
         {id:4,answer: 'Dictionaries are accessed by key.'}
                 ],
         correctAnswer:4,
-        link: 'www.6.com'
+        link: 'https://www.w3schools.com/python/python_dictionaries.asp'
     },
 
     {
@@ -83,7 +83,7 @@ db.quiz.insertMany([
         {id:4,answer: 'def myFunction'}
                 ],
         correctAnswer:1,
-        link: 'www.7.com'
+        link: 'https://www.w3schools.com/python/python_functions.asp'
     },
 
     {
@@ -95,7 +95,7 @@ db.quiz.insertMany([
         {id:4,answer: 'uppercase()'}
                 ],
         correctAnswer:1,
-        link: 'www.8.com'
+        link: 'https://www.w3schools.com/python/ref_string_upper.asp'
     },
 
     {
@@ -107,7 +107,7 @@ db.quiz.insertMany([
         {id:4,answer: '><'}
                 ],
         correctAnswer:2,
-        link: 'www.9.com'
+        link: 'https://www.w3schools.com/python/python_operators.asp'
     },
 
     {
@@ -119,7 +119,7 @@ db.quiz.insertMany([
         {id:4,answer: '{"name": "apple", "color": "green"}'}
                 ],
         correctAnswer:3,
-        link: 'www.10.com'
+        link: 'https://www.w3schools.com/python/python_lists.asp'
     }
 
 ] );
