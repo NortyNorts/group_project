@@ -18,6 +18,12 @@ function App() {
   const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
   const [userWrongAnswers, setUserWrongAnswer] = useState([])
   const [finalScore, setFinalScore] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUserStickes, setCurrentUserStickes] = useState({
+    notes: [
+    ],
+})
+  // const [initialNotesState, setinitialNotesState] = useState([])
   
 
   useEffect(() => {
@@ -25,18 +31,25 @@ function App() {
           .then(users => setUsers(users));
       QuizService.getQuiz()
           .then(quiz => setQuiz(quiz))
+
+      // NotesService.getNotes()
+        // .then(notes => setinitialNotesState )
     }, []);
 
+    
+  //   const initialNotesState = {
+  //     lastNoteCreated: null,
+  //     notes: [
+  //         // {id: '1', text: "I'm the first note", rotate: 12},
+  //         // {id: '2', text: "I'm the second note", rotate: 2},
+  //         // {id: '3', text: "I'm the thrid note", rotate: 8}
+  //     ],
+  // };
 
 
-  const initialNotesState = {
-      lastNoteCreated: null,
-      notes: [
-          // {id: '1', text: "I'm the first note", rotate: 12},
-          // {id: '2', text: "I'm the second note", rotate: 2},
-          // {id: '3', text: "I'm the thrid note", rotate: 8}
-      ],
-  };
+  // const initialStickiesState = () => {
+  //   return currentUserStickes
+  // };
 
 
   const notesReducer = (prevState, action) => {
@@ -44,7 +57,6 @@ function App() {
           case 'ADD_NOTE': {
               const newState = { 
                   notes: [...prevState.notes, action.payload],
-                  lastNoteCreated: new Date().toTimeString().slice(0, 8)
               };
               console.log('After ADD_NOTE: ', newState);
               return newState;
@@ -62,19 +74,21 @@ function App() {
           
           }
       }
-  
+
+      console.log("CurrentStickyFromDB",currentUserStickes)
+
   return (
 
     <Router>
       <div className='App'>
-          <NavBar users={users}/>
+          <NavBar setCurrentUser={setCurrentUser} setCurrentUserStickes={setCurrentUserStickes} users={users}/>
         <div className='content'>
           <Switch>
             <Route exact path="/"> <Home /></Route>
             
             <Route exact path="/quiz"><Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz} /></Route>
             
-            <Route path="/stickies"><Stickies initialNotesState={initialNotesState} notesReducer={notesReducer} /></Route>
+            <Route path="/stickies"><Stickies setCurrentUserStickes={setCurrentUserStickes} currentUserStickes={currentUserStickes} currentUser={currentUser} notesReducer={notesReducer} /></Route>
             
             <Route path="/rubberducking"><RubberDucking /></Route>
 
@@ -86,19 +100,8 @@ function App() {
         </div>
       </div>
 
-      {/* <div className="Main">
-                <Header users={users}/>
- 
-            </div>
-            <Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
-            <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
-            <Anecdotes/>
-            <Links/>
-            <RubberDucking/> */}
-
-
     </Router>
-   
+
   );
 }
 

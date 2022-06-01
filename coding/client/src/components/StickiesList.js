@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useEffect} from "react";
 import '../css/stickies.css'
 
 
 const StickiesList = ({dragOver, noteInput, addNote, setNoteInput, dropNote, notesState, dispatch}) => {
+
+    // useEffect(()=>{
+    //     console.log("Banana",notesState)
+    // },[])
 
     return(
         <div className="app" onDragOver={dragOver}>

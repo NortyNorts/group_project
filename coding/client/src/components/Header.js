@@ -1,8 +1,6 @@
 import React, {useState} from "react"
 
-const Header = (({users})=>{
-    
-    const [selectedUser, setSelectedUser] = useState(null)
+const Header = (({users, setCurrentUser, setCurrentUserStickes})=>{
 
     const handleChange = function(event){
         const chosenUser = users[event.target.value]
@@ -14,7 +12,8 @@ const Header = (({users})=>{
     })
     
     const onUserSelected = function(user){
-        setSelectedUser(user)
+        setCurrentUser(user)
+        setCurrentUserStickes(user.notes)
     }
 
     return(

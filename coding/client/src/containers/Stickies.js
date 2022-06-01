@@ -1,12 +1,21 @@
 import '../css/stickies.css';
-import React, { useState, useReducer } from 'react';
+import React, { useState, useReducer,useEffect } from 'react';
 import { v4 as uuid } from 'uuid';
 import StickiesList from '../components/StickiesList';
+import UsersService from '../services/UserService';
 
 
-const Stickies = ({initialNotesState, notesReducer}) => {
-    const [notesState, dispatch] = useReducer(notesReducer, initialNotesState);
+
+const Stickies = ({notesReducer, currentUserStickes, setCurrentUserStickes, currentUser}) => {
+    
+// useEffect(()=>{
+//     dispatch({ type: 'ADD_NOTE', payload: currentUserStickes });
+// },[currentUser])
+
+    const [notesState, dispatch] = useReducer(notesReducer, currentUserStickes);
+
     const [noteInput, setNoteInput] = useState('');
+    
 
     const addNote = event => {
         event.preventDefault();
@@ -16,13 +25,18 @@ const Stickies = ({initialNotesState, notesReducer}) => {
 
         const newNote = {
             id: uuid(),
-            text: noteInput,
+            text: noteInput, 
             rotate: Math.floor(Math.random() * 20)
         }
-        
         dispatch({ type: 'ADD_NOTE', payload: newNote });
         setNoteInput('');
+        // createSticky(newNote)
     };
+
+    // const createSticky = newSticky => {
+    //     UsersService.addSticky(newSticky, currentUser._id)
+    //       .then(savedSticky => setCurrentUserStickes([ ...currentUserStickes, savedSticky]));
+    //   };
 
     const dragOver = event => {
         event.stopPropagation();

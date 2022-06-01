@@ -43,6 +43,21 @@ const createRouter = function (collection) {
     });
   })
 
+  router.patch('/:id', (req, res) =>{
+    const id = req.params.id
+    const newData = req.body;
+    collection
+    .updateOne({ _id: ObjectID(id) }, {$set:{notes:newData}})
+    .then((result)=>{
+      res.json(result.ops[0])
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500);
+      res.json({ status: 500, error: err });
+    });
+  })
+
 router.delete('/:id',(req, res) =>{
   const id = req.params.id
   collection
