@@ -6,19 +6,13 @@ import duck from "../images/duck.png"
 
 const RubberDuckingForm =({selectedFact, getRandomDuckFact}) =>{
 
-    const[randomDuckFact, setRandomDuckFact] = useState('')
     const[displayQuestion, setDisplayQuestion] = useState('')
 
-
-
-    
     const saveSubmit = (event) =>{
             event.preventDefault()
             // setQuestion(event.target.value)
             setDisplayQuestion(event.target.question.value)
             getRandomDuckFact()
-
-            setRandomDuckFact(selectedFact)
     }
 
 
@@ -38,7 +32,7 @@ const RubberDuckingForm =({selectedFact, getRandomDuckFact}) =>{
                 <span> {displayQuestion}</span>
                 <div></div>
                 Eric says:
-                <span> {randomDuckFact}</span>
+                <span> {selectedFact}</span>
                 
             </h3>
             <img src={duck} id="ducking"/>
