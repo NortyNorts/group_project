@@ -9,7 +9,7 @@ const Anecdotes = (()=>{
     return(
         <>
         <div className='anecdotes-container'>
-            <h2>Anecdotes</h2>
+            {/* <h2>Anecdotes</h2> */}
             <div className='bust-container'>
           <img src={bust1} id="bust"/>
           <img src={bust3} id="bust"/>
@@ -17,29 +17,33 @@ const Anecdotes = (()=>{
           <img src={bust2} id="bust"/>
           <img src={bust5} id="bust"/>
           </div>
-          <div class="break"></div>
-            <p>You are at the end of week 1 of the Professional Software Development course at CodeClan.
+          {/* <div class="break"></div> */}
+            
+<h5>You are at the end of week 1 of the Professional Software Development course at CodeClan.
+<p></p>
+You have just covered  week 1 syllabus  and are likely looking to recap what you’ve just learned.</h5>
+<p>
+<b>You are probably thinking:</b>
+<ul>
+<li>I don’t know yet whether I’ll be able to keep up</li>
+<li>Day 2 homework was a lot, I hope it’s not all like that</li>
+<li>This is a brand new life that we have to adapt to</li>
+<li> i don’t think i will ever get to the expected level (imposter syndrome)</li>
+<li>i feel in-over-my-head</li>
+<li>this is daunting. i hope i can make it. but it’s exciting</li>
+<li>this isn’t clicking like i thought it would </li>
+</ul>
 
-You have just covered  week 1 syllabus  and are likely looking to recap what you’ve just learned.
-
-You are probably thinking:
-
-- I don’t know yet whether I’ll be able to keep up
-- Day 2 homework was a lot, I hope it’s not all like that
-- This is a brand new life that we have to adapt to
-- i don’t think i will ever get to the expected level (imposter syndrome)
-- i feel in-over-my-head
-- this is daunting. i hope i can make it. but it’s exciting
-- this isn’t clicking like i thought it would 
-
-You are probably feeling:
-
-- apprehensive - it’s a lot of work!
-- excited - meeting  a lot of people in an educational environment 
-- a false sense of security and what’s the catch 
-- overwhelmed by so many new concepts
-- fear, but also a lot of excitement and hope
+<b>You are probably feeling:</b>
+<ul>
+<li>apprehensive - it’s a lot of work!</li>
+<li>excited - meeting  a lot of people in an educational environment </li>
+<li>a false sense of security and what’s the catch </li>
+<li>overwhelmed by so many new concepts</li>
+<li>fear, but also a lot of excitement and hope</li>
+</ul>
 </p>
+<h3>It's totally normal, you'll be fine!!</h3>
 </div>
         </>
     )
