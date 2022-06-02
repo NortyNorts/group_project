@@ -36,13 +36,11 @@ function DuckResponse(){
 
 return (
     <>
-
-    
-
     <div className="duck">
-            <RubberDuckingForm selectedFact={selectedFact} getRandomDuckFact={getRandomDuckFact}/>
-                
-            </div>
+            <RubberDuckingForm 
+            selectedFact={selectedFact} 
+            getRandomDuckFact={getRandomDuckFact}/>            
+    </div>
     </>
     
 );
