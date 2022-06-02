@@ -13,7 +13,6 @@
   }
 
   .welcome-text{
-
         width:25em;
         height:12em;
         border: 1px solid #E2C28A; 
@@ -24,15 +23,12 @@
         font-family: 'Mulish', sans-serif;
         font-size: 0.3em;
         padding: 1em;
-        
-     
       }
 
 h4{
     color:#ffffff;
     font-family: 'Mulish', sans-serif;
     margin:50px;
-            
 }
 
 
@@ -51,12 +47,12 @@ height: 100vh;
   }
 
 .person-text-selection{
-
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    /* justify-content: space-around; */
+    margin-top:-5em;
+    margin-bottom: 5em;
 }
 
 #people{
@@ -79,7 +75,6 @@ a:hover {
     transform: scaleY(1.05) scaleX(1.05);
 }
 
-
 .duck-container{
     display: flex;
     flex-flow: row wrap;
@@ -92,14 +87,12 @@ a:hover {
 
 #ducking:hover{
     transform: rotate(10deg)
-
 }
 
 .duck-text {
     color:#5a5a59;
     font-family: 'Mulish', sans-serif;
     font-size: 2em;
-
 }
 
 .fourBs{
@@ -108,15 +101,21 @@ a:hover {
     justify-content: space-evenly;
     align-items: center;
     width:100%vh;
-    height: 100vh;
+    height: 92vh;
     background-color: #ffffff;
     }
+
+.fourBs > p {
+    font-family: 'Mulish', sans-serif;
+    font-size: 2em;
+}
 
 h3{
     text-align: center;
     color:#e8e5e5;
     font-family: 'Mulish', sans-serif;
     font-size: 2em;
+    margin-bottom: -4em;
 }
 
 footer{
@@ -125,8 +124,8 @@ footer{
     justify-content: space-evenly;
     align-items: center;
     width:100%vh;
-    height: 25vh;
+    height: 30vh;
     background-color: #bd7c6b;
     color: white;
-    }
+}
 

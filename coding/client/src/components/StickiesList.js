@@ -5,7 +5,7 @@ import '../css/stickies.css'
 const StickiesList = ({dragOver, noteInput, addNote, setNoteInput, dropNote, notesState, dispatch}) => {
 
     return(
-        <div className="app" onDragOver={dragOver}>
+        <div className="stickies-div" onDragOver={dragOver}>
             <form className="note-form" onSubmit={addNote}>
                 <textarea placeholder="New note..." 
                     value={noteInput}

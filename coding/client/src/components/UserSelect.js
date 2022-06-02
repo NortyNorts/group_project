@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 const UserSelector = ({users, onUserSelected}) => {
 
     const handleChange = function(event) {
@@ -13,7 +14,7 @@ const UserSelector = ({users, onUserSelected}) => {
 
     return (
         <select defaultValue="" onChange={handleChange}>
-            <option value="" selected>Choose a User</option>
+            <option  value="" selected>Choose a User</option>
             {userOptions}
         </select>
     )

@@ -15,21 +15,18 @@
   transform: translateY(4px);
  }
 
- form {
-    
+ .quiz-form {
     display:flex;
     flex-direction: column;
     justify-content: center;;
     align-items:center;;
     text-align: left;
     width:100%vh;
-
-    background-image:linear-gradient( to top, #db7c6b, #ede9e9);
+    /* background-image:linear-gradient( to top, #db7c6b, #ede9e9 ); */
+    background-color: #db7c6b;
     background-size: cover;
     background-attachment: fixed;
-    /* color:#ffffff; */
     font-family: 'Mulish', sans-serif;
-    /* font-size: 5em; */
     padding-bottom: 3em;
   }
 
@@ -48,8 +45,7 @@
       border: 2px white;
       padding:25px;
       background: white;
-      box-shadow: #000 10px 10px 0 0;
-      
+      box-shadow: #000 10px 10px 0 0; 
   }
   
   

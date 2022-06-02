@@ -1,0 +1,16 @@
+.navbar{
+    background-color: #ffffff;
+    font-family: 'Abril Fatface', cursive;
+    font-size: 1.1em;
+    color:#121212;
+}
+
+.links {
+    list-style: none;
+    flex: 1;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Mulish', sans-serif;
+    color:#121212;
+}

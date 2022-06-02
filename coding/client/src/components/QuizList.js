@@ -20,7 +20,7 @@ const QuizArray = QuestionData.map((question, index)=>{
 
     return (
         <>  
-            <form onSubmit={onQuizSubmit}>
+            <form onSubmit={onQuizSubmit} className="quiz-form">
                 <div className="quiz-array"><p>{QuizArray}</p></div>
                     <input type="submit" name="quiz-submit" id="quiz" value="Submit"/>
             </form>

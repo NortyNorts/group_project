@@ -1,0 +1,40 @@
+
+
+.useful-links-container{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    width:100%vh;
+    height: 100%vh;
+    padding:10em;
+    background-color: #fbb5b8;
+}
+
+.useful-links-div{
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #121212;
+    box-shadow: #000 4px 4px 0 0;
+    box-sizing: border-box;
+    padding: 15px 100px;
+    font-size: 1em;
+    font-family: 'Mulish', sans-serif;
+    margin-bottom: 5em;
+}
+
+#person {
+    width: 15em;
+    height: 40em;
+}
+
+
+#h1 {
+    font-family: 'Mulish', sans-serif;
+    color:#121212;
+    margin-bottom: 2em;    
+}
+
+
+
+
+

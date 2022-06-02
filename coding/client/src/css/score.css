@@ -1,0 +1,28 @@
+.final-score-container{
+    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;;
+    align-items:center;;
+    text-align: left;
+    width:100%vh;
+
+    /* background-image:linear-gradient( to top, #db7c6b, #ede9e9); */
+    background-color: #db7c6b;
+    background-size: cover;
+    background-attachment: fixed;
+    color:#ffffff;
+    font-family: 'Mulish', sans-serif;
+    padding-bottom: 3em;
+    
+  }
+
+.quiz-links {
+    text-decoration:none;
+    color:#121212;  
+} 
+
+.final-score-container >ul {
+    list-style-type: none;
+    
+}

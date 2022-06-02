@@ -2,19 +2,19 @@
     box-sizing: border-box;
 }
 
-.app {
+.stickies-div {
     padding: 50px;
     height: 100vh;
     background-image: url('../assets/pinboard3.jpeg');
-    background-size: cover;   
+    background-size: cover;  
 }
     
 .close {
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        right: 15px;
-        transition: transform .3s ease;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 15px;
+    transition: transform .3s ease;
         
     }
 .close:hover {

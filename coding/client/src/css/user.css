@@ -1,0 +1,11 @@
+.drop-down{
+    background-color: white;
+    border: thin solid #121212;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.5em;
+    padding: 0.3em 2.5em 0.5em 1em;
+    box-shadow: #000 1px 1px 0 0; 
+    margin:0em 0em 1em 1em;
+    font-family: 'Mulish', sans-serif;
+}
