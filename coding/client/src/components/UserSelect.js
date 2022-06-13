@@ -9,7 +9,7 @@ const UserSelector = ({users, onUserSelected}) => {
     }
     
     const userOptions = users.map((user, index) => {
-      return <option value={index} key={index}>{user.Username}</option>
+        return <option value={index} key={index}>{user.Username}</option>
     })
 
     return (

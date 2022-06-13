@@ -27,10 +27,9 @@ const Quiz = (({finalScore, quiz, setUserCorrectAnswers, userCorrectAnswers, use
                 const userAnswer = userAnswers[index]
                 if(actualAnswer === userAnswer){
                     userCorrectAnswersNext.push(userAnswer)
-                } else {
-
+                } 
+                else{
                     userWrongAnswersNext.push((index+1) + " " + " ...try taking a look at: " + feedbackLinks[index])
-
                 }    
             })
 
@@ -40,20 +39,26 @@ const Quiz = (({finalScore, quiz, setUserCorrectAnswers, userCorrectAnswers, use
             console.log(userWrongAnswersNext)
 
             setFinalScore(userCorrectAnswersNext.length)
-
-
-            
         }
 
     return (
         <>
-            <QuizList setUserAnswers={setUserAnswers} userAnswers={userAnswers} QuestionData={QuestionData} onQuizSubmit={onQuizSubmit}
+            <QuizList 
+                setUserAnswers={setUserAnswers} 
+                userAnswers={userAnswers} 
+                QuestionData={QuestionData} 
+                onQuizSubmit={onQuizSubmit}
             />
-            {finalScore ? <ScoreComponent finalScorePercent={finalScorePercent} finalScore={finalScore} userWrongAnswers={userWrongAnswers} feedbackLinks={feedbackLinks}/> : null }
+            {finalScore ? 
+                <ScoreComponent 
+                    finalScorePercent={finalScorePercent} 
+                    finalScore={finalScore} 
+                    userWrongAnswers={userWrongAnswers} 
+                    feedbackLinks={feedbackLinks}
+                />
+            : null}
         </>
     )
-
-    })
-
+})
 
 export default Quiz

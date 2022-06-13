@@ -5,7 +5,6 @@ const UsersService = {
     return fetch(baseURL)
       .then(res => res.json());
   },
-
 }
 
 export default UsersService;

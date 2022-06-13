@@ -19,7 +19,7 @@ const Stickies = ({initialNotesState, notesReducer}) => {
             text: noteInput,
             rotate: Math.floor(Math.random() * 20)
         }
-        
+
         dispatch({ type: 'ADD_NOTE', payload: newNote });
         setNoteInput('');
     };
@@ -36,7 +36,14 @@ const Stickies = ({initialNotesState, notesReducer}) => {
 
     return (
         <>
-            <StickiesList dragOver={dragOver} noteInput={noteInput} addNote={addNote} setNoteInput={setNoteInput} dropNote={dropNote} notesState={notesState} dispatch={dispatch}/>
+            <StickiesList 
+            dragOver={dragOver}
+            noteInput={noteInput}
+            addNote={addNote}
+            setNoteInput={setNoteInput}
+            dropNote={dropNote}
+            notesState={notesState}
+            dispatch={dispatch}/>
         </>
     );
 }
