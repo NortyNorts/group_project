@@ -1,4 +1,3 @@
-
 # ERIK
 
 Erik is an educational app for students enrolled in the 16 week immersive Software Development course at CodeClan, a digital skills academy based in Scotland. 

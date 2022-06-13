@@ -6,7 +6,7 @@ import Anecdotes from './components/Anecdotes';
 import Links from './components/Links';
 import NavBar from './components/NavBar';
 import Home from './components/Home';
-import React, {useState, useEffect, useReducer} from 'react'
+import React, {useState, useEffect} from 'react'
 import UsersService from './services/UserService';
 import QuizService from './services/QuizService';
 import './css/stickies.css'
@@ -58,23 +58,38 @@ function App() {
               console.log('After DELETE_NOTE: ', newState);
               return newState;
           }
-  
-          
-          }
       }
+    }
   
   return (
-
     <Router>
       <div className='App'>
+          
           <NavBar users={users}/>
+        
         <div className='content'>
           <Switch>
+
             <Route exact path="/"> <Home /></Route>
             
-            <Route exact path="/quiz"><Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswers={setUserWrongAnswers} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz} /></Route>
+            <Route exact path="/quiz">
+              <Quiz 
+                finalScore={finalScore}
+                setFinalScore={setFinalScore} 
+                setUserWrongAnswers={setUserWrongAnswers}
+                userWrongAnswers={userWrongAnswers}
+                setUserCorrectAnswers={setUserCorrectAnswers}
+                userCorrectAnswers={userCorrectAnswers}
+                quiz={quiz}
+                />
+            </Route>
             
-            <Route path="/stickies"><Stickies initialNotesState={initialNotesState} notesReducer={notesReducer} /></Route>
+            <Route path="/stickies">
+              <Stickies 
+                initialNotesState={initialNotesState} 
+                notesReducer={notesReducer}
+              />
+            </Route>
             
             <Route path="/rubberducking"><RubberDucking /></Route>
 
@@ -83,22 +98,12 @@ function App() {
             <Route path="/links"><Links/></Route>
   
           </Switch>
+        
         </div>
+      
       </div>
-
-      {/* <div className="Main">
-                <Header users={users}/>
- 
-            </div>
-            <Quiz finalScore={finalScore} setFinalScore={setFinalScore} setUserWrongAnswer={setUserWrongAnswer} userWrongAnswers={userWrongAnswers} setUserCorrectAnswers={setUserCorrectAnswers} userCorrectAnswers={userCorrectAnswers} quiz={quiz}/>
-            <Stickies initialNotesState={initialNotesState} notesReducer={notesReducer}/>
-            <Anecdotes/>
-            <Links/>
-            <RubberDucking/> */}
-
-
+    
     </Router>
-   
   );
 }
 

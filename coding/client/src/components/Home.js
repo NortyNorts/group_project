@@ -7,34 +7,34 @@ import person4 from "../images/person4.png"
 import duck from "../images/duck.png"
 
 
-
 const Home = (()=>{
     return(
     
-
       <body>
 
         <div className='welcome-div'>
+
         <h4>Welcome</h4>
+
           <div className='welcome-text'>
 
-          <p><em>Meet Erik.<br></br>An educational app for students enrolled in the 16 week immersive Software Development course at CodeClan, a digital skills academy based in Scotland.</em></p>
+          <p>
+            <em>Meet Erik.<br></br>An educational app for students enrolled in the 16 week immersive Software Development course at CodeClan, a digital skills academy based in Scotland.</em>
+          </p>
         
+          </div>
+
         </div>
-
-        </div >
-
-        
         
         <div className='person-container'>
           <Link to='/anecdotes'><img src={person1} id="people"/></Link>
           <Link to='/quiz'><img src={person3} id="people"/></Link>
           <Link to='/stickies'><img src={person4} id="people"/></Link>
           <Link to='/links'><img src={person2} id="people"/></Link>
-          </div>
-          <div class="break"></div>
-        
+        </div>
           
+        <div class="break"></div>
+        
         <div className="person-text-selection">
           <Link to='/anecdotes'><h5>overReacting?</h5></Link>
           <Link to='/quiz'><h5>Quiz</h5></Link>
@@ -44,36 +44,31 @@ const Home = (()=>{
 
         <div className="duck-container">
 
-        <p className="duck-text">
-          Feeling stuck? Talk to your duck!
-        </p>
+          <p className="duck-text">
+            Feeling stuck? Talk to your duck!
+          </p>
 
-        <Link to='/rubberducking'><img src={duck} id="ducking"/></Link>
+          <Link to='/rubberducking'><img src={duck} id="ducking"/></Link>
 
         </div>
 
         <h3><em>Remember...</em></h3>
+        
         <div className="fourBs">
           <p>Brain</p>
           <p>Books</p>
           <p>Buddy</p>
           <p>Boss</p>
-          
         </div>
-
           
         <footer>
-
-        <p>@ElinVS</p>
-        <p>@Johnstoncam</p>
-        <p>@NortyNorts</p>
-        <p>@Andrew-C-Smith</p>
+          <p>@ElinVS</p>
+          <p>@Johnstoncam</p>
+          <p>@NortyNorts</p>
+          <p>@Andrew-C-Smith</p>
         </footer>
 
-
-
         </body>
-            
 
     )
 })

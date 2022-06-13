@@ -1,5 +1,6 @@
-import React, {useEffect, useState} from 'react'; //CHANGED
+import React, {useEffect, useState} from 'react';
 import RubberDuckingForm from './RubberDuckingForm';
+
 
 function DuckResponse(){
 
@@ -8,41 +9,33 @@ function DuckResponse(){
 
     useEffect(() => {
         getFacts();
-      }, [])
+    },[])
 
     const getFacts = function(){
-    fetch('http://localhost:9000/api/ducks')
-    .then(res => res.json())
-    .then(duckFacts => setDuckFacts(duckFacts));
+        fetch('http://localhost:9000/api/ducks')
+        .then(res => res.json())
+        .then(duckFacts => setDuckFacts(duckFacts));
     }
 
 
     const getRandomIndex =(array) => {
-
-            return  Math.floor(Math.random() * array.length);
-
-        }
+        return  Math.floor(Math.random() * array.length);
+    }
     
     const getRandomDuckFact =() =>{
-         setSelectedFact(duckFacts[getRandomIndex(duckFacts)].DuckFact)
-         console.log(selectedFact)
-         
+        setSelectedFact(duckFacts[getRandomIndex(duckFacts)].DuckFact)
+        console.log(selectedFact)
     }
-        // const array = duckFacts;
-    
-        // const result = getRandomItem(array);
-    
-    
 
-return (
-    <>
-    <div className="duck">
-            <RubberDuckingForm 
-            selectedFact={selectedFact} 
-            getRandomDuckFact={getRandomDuckFact}/>            
-    </div>
-    </>
-    
+    return (
+        <>
+            <div className="duck">
+                <RubberDuckingForm 
+                    selectedFact={selectedFact} 
+                    getRandomDuckFact={getRandomDuckFact}
+                />            
+            </div>
+        </>
 );
 }
 
