@@ -18,6 +18,13 @@ function App() {
   const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
   const [userWrongAnswers, setUserWrongAnswers] = useState([])
   const [finalScore, setFinalScore] = useState(null)
+  const [currentUser, setCurrentUser] = useState(null)
+  const [currentUserStickes, setCurrentUserStickes] = useState({
+    notes: [
+    ],
+})
+
+  // const [initialNotesState, setinitialNotesState] = useState([])
   
 
   useEffect(() => {
@@ -29,14 +36,18 @@ function App() {
 
 
 
-  const initialNotesState = {
-      lastNoteCreated: null,
-      notes: [
-          // {id: '1', text: "I'm the first note", rotate: 12},
-          // {id: '2', text: "I'm the second note", rotate: 2},
-          // {id: '3', text: "I'm the thrid note", rotate: 8}
-      ],
-  };
+  // const initialNotesState = {
+  //     lastNoteCreated: null,
+  //     notes: [
+  //         // {id: '1', text: "I'm the first note", rotate: 12},
+  //         // {id: '2', text: "I'm the second note", rotate: 2},
+  //         // {id: '3', text: "I'm the thrid note", rotate: 8}
+  //     ],
+  // };
+
+  // const initialStickiesState = () => {
+  //   return currentUserStickes
+  // };
 
 
   const notesReducer = (prevState, action) => {
@@ -65,7 +76,11 @@ function App() {
     <Router>
       <div className='App'>
           
-          <NavBar users={users}/>
+          <NavBar 
+            users={users}
+            setCurrentUser={setCurrentUser} 
+            setCurrentUserStickes={setCurrentUserStickes}
+          />
         
         <div className='content'>
           <Switch>
@@ -85,9 +100,11 @@ function App() {
             </Route>
             
             <Route path="/stickies">
-              <Stickies 
-                initialNotesState={initialNotesState} 
+              <Stickies
                 notesReducer={notesReducer}
+                setCurrentUserStickes={setCurrentUserStickes}
+                currentUserStickes={currentUserStickes}
+                currentUser={currentUser}
               />
             </Route>
             

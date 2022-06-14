@@ -3,7 +3,8 @@ import Header from "./Header"
 import '../css/navbar.css'
 
 
-const NavBar =({users}) => {
+const NavBar =({users, setCurrentUser, setCurrentUserStickes}) => {
+    
     return (
         <>
         
@@ -14,12 +15,16 @@ const NavBar =({users}) => {
                 <div className="links">
                 
                     <Link to ='/'>   Home   </Link>
-                    <a href='/quiz'>  Quiz   </a>
+                    <Link to='/quiz'>  Quiz   </Link>
                     <Link to='/rubberducking'>  Rubber Duck   </Link>
-                    <a href='/stickies'>  Pin Board   </a>
+                    <Link to='/stickies'>  Pin Board   </Link>
                     <Link to='/anecdotes'>  overReacting?   </Link>
                     <Link to='/links'>  Useful Links </Link>
-                    <Header users={users}/>
+                    <Header 
+                        users={users}
+                        setCurrentUser={setCurrentUser}
+                        setCurrentUserStickes={setCurrentUserStickes}
+                    />
 
                 </div>
 
