@@ -4,8 +4,10 @@ import { v4 as uuid } from 'uuid';
 import StickiesList from '../components/StickiesList';
 
 
-const Stickies = ({initialNotesState, notesReducer}) => {
-    const [notesState, dispatch] = useReducer(notesReducer, initialNotesState);
+const Stickies = ({notesReducer, currentUserStickes, setCurrentUserStickes, currentUser}) => {
+
+
+    const [notesState, dispatch] = useReducer(notesReducer, currentUserStickes);
     const [noteInput, setNoteInput] = useState('');
 
     const addNote = event => {
