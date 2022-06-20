@@ -21,7 +21,8 @@ const StickiesList = ({dragOver, noteInput, addNote, setNoteInput, dropNote, not
                         style={{ transform: `rotate(${note.rotate}deg)` }}
                         onDragEnd={dropNote}
                         draggable="true"
-                        key={note.id}>
+                        key={note.id}
+                        >
 
                         <div onClick={() => dispatch({ type: 'DELETE_NOTE', payload: note })}
                             className="close">

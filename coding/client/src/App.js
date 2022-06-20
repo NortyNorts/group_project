@@ -24,30 +24,12 @@ function App() {
     ],
 })
 
-  // const [initialNotesState, setinitialNotesState] = useState([])
-  
-
   useEffect(() => {
       UsersService.getUsers()
           .then(users => setUsers(users));
       QuizService.getQuiz()
           .then(quiz => setQuiz(quiz))
     }, []);
-
-
-
-  // const initialNotesState = {
-  //     lastNoteCreated: null,
-  //     notes: [
-  //         // {id: '1', text: "I'm the first note", rotate: 12},
-  //         // {id: '2', text: "I'm the second note", rotate: 2},
-  //         // {id: '3', text: "I'm the thrid note", rotate: 8}
-  //     ],
-  // };
-
-  // const initialStickiesState = () => {
-  //   return currentUserStickes
-  // };
 
 
   const notesReducer = (prevState, action) => {
@@ -57,7 +39,8 @@ function App() {
                   notes: [...prevState.notes, action.payload],
                   lastNoteCreated: new Date().toTimeString().slice(0, 8)
               };
-              console.log('After ADD_NOTE: ', newState);
+              setCurrentUserStickes(newState);
+              UsersService.updateStickies(newState, currentUser._id);
               return newState;
           }
   
@@ -66,7 +49,8 @@ function App() {
                   ...prevState,
                   notes: prevState.notes.filter(note => note.id !== action.payload.id)
               };
-              console.log('After DELETE_NOTE: ', newState);
+              setCurrentUserStickes(newState);
+              UsersService.updateStickies(newState, currentUser._id)
               return newState;
           }
       }
@@ -104,7 +88,6 @@ function App() {
                 notesReducer={notesReducer}
                 setCurrentUserStickes={setCurrentUserStickes}
                 currentUserStickes={currentUserStickes}
-                currentUser={currentUser}
               />
             </Route>
             

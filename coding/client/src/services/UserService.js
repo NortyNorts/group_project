@@ -5,6 +5,19 @@ const UsersService = {
     return fetch(baseURL)
       .then(res => res.json());
   },
+
+  updateStickies(updatedStickies, id) {
+    delete updatedStickies.lastNoteCreated
+    return fetch(baseURL + id, {
+      method: 'PATCH',
+      body: JSON.stringify({notes:updatedStickies}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(res => res.json());
+  },
+
 }
 
 export default UsersService;
