@@ -4,7 +4,7 @@ import { v4 as uuid } from 'uuid';
 import StickiesList from '../components/StickiesList';
 
 
-const Stickies = ({notesReducer, currentUserStickes, setCurrentUserStickes, currentUser}) => {
+const Stickies = ({notesReducer, currentUserStickes}) => {
 
 
     const [notesState, dispatch] = useReducer(notesReducer, currentUserStickes);
@@ -22,7 +22,7 @@ const Stickies = ({notesReducer, currentUserStickes, setCurrentUserStickes, curr
             rotate: Math.floor(Math.random() * 20)
         }
 
-        dispatch({ type: 'ADD_NOTE', payload: newNote });
+        dispatch({ type: 'ADD_NOTE', payload: newNote});
         setNoteInput('');
     };
 
